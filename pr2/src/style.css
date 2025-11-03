@@ -1,0 +1,103 @@
+:root {
+  --bg: #0b0d10;
+  --panel: #12151a;
+  --text: #e7e9ee;
+  --muted: #a8afbf;
+  --brand: #6aa6ff;
+  --brand-2: #7bdcb5;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: linear-gradient(120deg, #0b0d10, #0f1320);
+}
+
+/* Утилиты */
+.container {
+  width: min(1100px, 92vw);
+  margin-inline: auto;
+  padding-inline: 8px;
+}
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0;
+  clip: rect(0 0 0 0); overflow: hidden;
+}
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: saturate(1.2) blur(6px);
+  background: color-mix(in oklab, var(--bg) 80%, transparent);
+  border-bottom: 1px solid #1b2330;
+}
+.header-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 14px 0;
+}
+.logo { margin: 0; font-size: 20px; letter-spacing: .3px; }
+.nav a {
+  color: var(--muted); text-decoration: none; padding: 8px 10px; border-radius: 10px;
+}
+.nav a[aria-current="page"], .nav a:hover { color: var(--text); background: #1a2232; }
+
+.search-row { padding: 8px 0 14px; }
+.search input {
+  width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid #1b2330;
+  background: #0f1420; color: var(--text); outline: none;
+}
+.search input::placeholder { color: #8090a0; }
+
+/* Grid каталога */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+  padding: 24px 0 56px;
+}
+.card {
+  grid-column: span 12;
+  background: var(--panel);
+  border: 1px solid #1b2330;
+  border-radius: var(--radius);
+  padding: 12px;
+  display: grid; gap: 10px;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.22); }
+.card img {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: calc(var(--radius) - 6px);
+  background: #0f1420;
+}
+.card h3 { margin: 0; font-size: 16px; }
+.price { margin: 0; color: var(--brand-2); font-weight: 600; }
+
+.add-btn {
+  padding: 10px 12px; border-radius: 10px; border: 1px solid #20304a;
+  background: #152036; color: var(--text); cursor: pointer;
+}
+.add-btn.is-in-cart {
+  border-color: #2b7a5a; background: #143226;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid #1b2330;
+  background: #0c121d;
+  padding: 24px 0;
+}
+
+/* Брейкпоинты */
+@media (min-width: 560px) {
+  .card { grid-column: span 6; }
+}
+@media (min-width: 840px) {
+  .card { grid-column: span 4; }
+}
+@media (min-width: 1040px) {
+  .card { grid-column: span 3; }
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лабораторная работа №1</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-row">
+        <h1 class="logo">MiniShop</h1>
+        <nav class="nav">
+          <a href="#" aria-current="page">Каталог</a>
+          <a href="#">О нас</a>
+          <a href="#">Контакты</a>
+        </nav>
+      </div>
+
+      <div class="container search-row">
+        <label class="search">
+          <span class="visually-hidden">Поиск по товарам</span>
+          <input id="searchInput" type="search" placeholder="Поиск по товарам…" />
+        </label>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="catalog-title" class="container">
+        <h2 id="catalog-title">Каталог</h2>
+        <div id="grid" class="grid">
+          <article class="card" data-title="Кружка керамическая">
+            <img src="/public/mug.png" alt="Кружка керамическая" loading="lazy" />
+            <h3>Кружка керамическая</h3>
+            <p class="price">490 ₽</p>
+            <button class="add-btn" data-id="p1">Добавить в корзину</button>
+          </article>
+
+          <article class="card" data-title="Тарелка глубокая">
+            <img src="/public/bowl.png" alt="Тарелка глубокая" loading="lazy" />
+            <h3>Тарелка глубокая</h3>
+            <p class="price">390 ₽</p>
+            <button class="add-btn" data-id="p2">Добавить в корзину</button>
+          </article>
+
+          <article class="card" data-title="Стакан стеклянный">
+            <img src="/public/glass.png" alt="Стакан стеклянный" loading="lazy" />
+            <h3>Стакан стеклянный</h3>
+            <p class="price">290 ₽</p>
+            <button class="add-btn" data-id="p3">Добавить в корзину</button>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© 2025 MiniShop. Все права защищены.</small>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
