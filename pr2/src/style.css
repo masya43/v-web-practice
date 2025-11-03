@@ -1,103 +1,96 @@
 :root {
-  --bg: #0b0d10;
-  --panel: #12151a;
-  --text: #e7e9ee;
-  --muted: #a8afbf;
-  --brand: #6aa6ff;
-  --brand-2: #7bdcb5;
-  --radius: 14px;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-* { box-sizing: border-box; }
-html, body { height: 100%; }
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  color: var(--text);
-  background: linear-gradient(120deg, #0b0d10, #0f1320);
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
-/* Утилиты */
-.container {
-  width: min(1100px, 92vw);
-  margin-inline: auto;
-  padding-inline: 8px;
-}
-.visually-hidden {
-  position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0;
-  clip: rect(0 0 0 0); overflow: hidden;
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
 }
 
-/* Header */
-.site-header {
-  position: sticky; top: 0; z-index: 10;
-  backdrop-filter: saturate(1.2) blur(6px);
-  background: color-mix(in oklab, var(--bg) 80%, transparent);
-  border-bottom: 1px solid #1b2330;
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
-.header-row {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 16px; padding: 14px 0;
-}
-.logo { margin: 0; font-size: 20px; letter-spacing: .3px; }
-.nav a {
-  color: var(--muted); text-decoration: none; padding: 8px 10px; border-radius: 10px;
-}
-.nav a[aria-current="page"], .nav a:hover { color: var(--text); background: #1a2232; }
 
-.search-row { padding: 8px 0 14px; }
-.search input {
-  width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid #1b2330;
-  background: #0f1420; color: var(--text); outline: none;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
 }
-.search input::placeholder { color: #8090a0; }
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #f7df1eaa);
+}
 
-/* Grid каталога */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 16px;
-  padding: 24px 0 56px;
-}
 .card {
-  grid-column: span 12;
-  background: var(--panel);
-  border: 1px solid #1b2330;
-  border-radius: var(--radius);
-  padding: 12px;
-  display: grid; gap: 10px;
-  transition: transform .12s ease, box-shadow .12s ease;
-}
-.card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.22); }
-.card img {
-  width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: calc(var(--radius) - 6px);
-  background: #0f1420;
-}
-.card h3 { margin: 0; font-size: 16px; }
-.price { margin: 0; color: var(--brand-2); font-weight: 600; }
-
-.add-btn {
-  padding: 10px 12px; border-radius: 10px; border: 1px solid #20304a;
-  background: #152036; color: var(--text); cursor: pointer;
-}
-.add-btn.is-in-cart {
-  border-color: #2b7a5a; background: #143226;
+  padding: 2em;
 }
 
-/* Footer */
-.site-footer {
-  border-top: 1px solid #1b2330;
-  background: #0c121d;
-  padding: 24px 0;
+.read-the-docs {
+  color: #888;
 }
 
-/* Брейкпоинты */
-@media (min-width: 560px) {
-  .card { grid-column: span 6; }
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
 }
-@media (min-width: 840px) {
-  .card { grid-column: span 4; }
+button:hover {
+  border-color: #646cff;
 }
-@media (min-width: 1040px) {
-  .card { grid-column: span 3; }
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
 }
